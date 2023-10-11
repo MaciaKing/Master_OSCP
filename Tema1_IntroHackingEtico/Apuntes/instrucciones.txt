@@ -1,3 +1,0 @@
-ps aux : post/ps.txt
-cat /etc/passwd : post/passwd.txt
-netstat -tulpn : post/netstat.txt
