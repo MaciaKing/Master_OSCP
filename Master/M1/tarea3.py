@@ -6,9 +6,6 @@ def get_ls_from_path(path):
 def get_current_user():
     return os.getlogin()
 
-def get_current_path():
-    return os.path.realpath(__file__)
-
 def create_dicc(current_user, path, list_path):
     return {
         'username': current_user,
@@ -17,14 +14,18 @@ def create_dicc(current_user, path, list_path):
     }
 
 if __name__ == "__main__":
-    current_user = get_current_user()
     # Decide the path
-    if len(sys.argv) > 1: 
+    if not len(sys.argv) == 2: 
+        raise Exception("bin/python tarea3.py <PATH>")
+    
+    # View if path is a directory
+    try:
         path = sys.argv[1]
-        if not os.path.isdir(path):
-            raise Exception(path+": not found directory")
-    else:
-        path = get_current_path()
+        os.path.isdir(path)
+    except Exception as e:
+        print("bin/python tarea3.py <PATH>")
+
+    current_user = get_current_user()
     ls = get_ls_from_path(path)
     final_dicc = create_dicc(current_user, path, ls)
     print(final_dicc)
