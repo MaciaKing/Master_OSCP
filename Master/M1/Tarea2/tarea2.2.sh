@@ -76,11 +76,6 @@ elige_opcion(){
         esac
 }
 
-if [ $# -ne 0 ] 
-then 
-        echo "No tiene parametros"
-fi
-
 sigue=1
 while [ $sigue -eq 1 ]
 do
