@@ -75,5 +75,5 @@ if __name__ == '__main__':
     print("\n***************** ECB Encryption *****************")
     crypted_ecb = aes.crypt_message_ECB(message_to_crypt)
     print("[Message ECB crypted:", crypted_ecb, " | class of var: ", type(crypted_ecb),"]")
-    decryted_ecb = aes.decrypt_message_OFB(crypted_ecb)
+    decryted_ecb = aes.decrypt_message_ECB(crypted_ecb)
     print("[Message ECB decrypted:", decryted_ecb, " | class of var: ", type(decryted_ecb),"]")
