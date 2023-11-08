@@ -1,6 +1,4 @@
 import hashlib
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 # Find md5 hash of the file
 def calculate_md5_hash(file_name):
