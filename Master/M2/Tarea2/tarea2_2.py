@@ -2,7 +2,7 @@ import hashlib
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
-# Función para calcular el hash MD5 de un archivo
+# Find md5 hash of the file
 def calculate_md5_hash(file_name):
     md5 = hashlib.md5()
     with open(file_name, "rb") as file:
@@ -13,9 +13,9 @@ def calculate_md5_hash(file_name):
             md5.update(data)
     return md5.hexdigest()
 
-
+# Compare the hash's of file_names and found the
+# original one.
 def MD5_comparation(file_names, original_hash):
-    # Compara los hashes MD5 de los archivos con el hash original
     for file_name in file_names:
         calculated_hash = calculate_md5_hash(file_name)
         if calculated_hash == original_hash:
