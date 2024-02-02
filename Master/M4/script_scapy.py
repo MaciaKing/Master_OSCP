@@ -12,5 +12,5 @@ def init_params():
 if __name__ == "__main__":
     args = init_params()
     rhost = args.rhost
-    #print(rhost)
+    port = args.port if args.port is not None else "1234"
 
